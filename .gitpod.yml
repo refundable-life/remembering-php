@@ -1,17 +1,12 @@
 ports:
-  - port: 80
+  - port: 8000
     onOpen: open-preview
 
 tasks:
-  - init: composer install
-    command: php index.php
+  - init: composer update
+    command: php -S 0.0.0.0:8000 -t public/
 
-github:
-  prebuilds:
-    master: true
-    branches: true
-    pullRequests: true
-    pullRequestsFromForks: true
-    addCheck: true
-    addComment: true
-    addBadge: false
+vscode:
+  extensions:
+    - felixfbecker.php-debug
+    - bmewburn.vscode-intelephense-client
