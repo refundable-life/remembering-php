@@ -1,0 +1,17 @@
+ports:
+  - port: 80
+    onOpen: open-preview
+
+tasks:
+  - init: composer install
+    command: php index.php
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: true
+    addComment: true
+    addBadge: false
