@@ -1,20 +1,10 @@
 <?php
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Factory\AppFactory;
-
-include("Middleware/JSONResponse.php");
 
 include __DIR__.'/../vendor/autoload.php';
 
-$app = AppFactory::create();
+include(__DIR__."/../Microservice/index.php");
 
-$json = fn(Request $request, Response $response, $args) => function ($text) use ($response) {
-    $response->getBody()->write($text);
+include('middleware.php');
+include('routes.php');
 
-    return $response;
-};
-
-$app->get('/', ($json)('Hello'));
-
-$app->run();
+Microservice()($middleware)($routes)();
