@@ -10,7 +10,6 @@ env:
 jobs:
   deploy:
     name: Deploy
-    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Latest Version
