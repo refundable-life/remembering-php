@@ -6,7 +6,7 @@ ports:
 
 tasks:
   - init: composer update
-    command: php -S 0.0.0.0:8000 -t app/
+    command: php -S localhost:8000 -t src src/index.php
 
 vscode:
   extensions:
