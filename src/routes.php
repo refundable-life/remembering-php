@@ -1,13 +1,10 @@
 <?php
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-
 include(__DIR__."/../Microservice/Route.php");
+include(__DIR__."/../Microservice/ActionHandler.php");
+
+include(__DIR__."/Actions/TestAction.php");
 
 $routes = array(
-  new Route('get', '/', function(Request $req, Response $res) {
-    $res->getBody()->write('Hi World');
-    return $res;
-  }) 
+  new Route('get', '/', ActionHandler($TestAction)) 
 );
