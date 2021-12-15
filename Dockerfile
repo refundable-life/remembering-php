@@ -25,5 +25,3 @@ COPY ./docker/000-default.conf /etc/apache2/sites-available/000-default.conf
 # Remove dev composer packages
 RUN composer install --optimize-autoloader --no-dev
 RUN composer dump-autoload
-
-# RUN chown -R www-data:www-data storage
