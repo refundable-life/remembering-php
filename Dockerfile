@@ -13,7 +13,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # RUN docker-php-ext-install pcntl opcache zip
 
 # Install GPRC for Firestore
-RUN apt-get install g++ zlib1g-dev
+RUN apt-get install g++ zlib1g-dev -y
 RUN pecl install grpc
 RUN docker-php-ext-enable grpc
 
