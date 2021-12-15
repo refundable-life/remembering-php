@@ -12,6 +12,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Extensions
 RUN docker-php-ext-install pcntl opcache soap zip pdo_pgsql pdo_mysql
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg && docker-php-ext-install gd
+RUN pecl install grpc
 RUN pecl install -o -f redis &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable redis
 
