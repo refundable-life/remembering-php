@@ -1,0 +1,1 @@
+This would be extracted to a separate package which can be included via composer in all microservices.

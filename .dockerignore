@@ -1,1 +1,8 @@
 vendor/
+.github/
+docker/
+DockerFile
+README.md
+.gitpod.yml
+.gitpod.Dockerfile
+.gitignore
