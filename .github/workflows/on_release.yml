@@ -22,6 +22,7 @@ jobs:
         run: |-
           gcloud builds submit \
             --quiet \
+            --timeout=1800s \
             --tag "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA"
       - name: Deploy
         run: |-
