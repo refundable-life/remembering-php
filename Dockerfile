@@ -3,7 +3,7 @@ FROM php:8.0.0-apache
 COPY . /var/www/html
 
 # # Update apt
-# RUN apt-get update
+RUN apt-get update
 # RUN apt-get install libcurl4 libcurl4-openssl-dev libzip-dev libpq-dev libpng-dev libfreetype6-dev libxml2-dev -y
 
 # Install Composer
