@@ -11,6 +11,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Extensions
 RUN docker-php-ext-install pcntl opcache zip
+
+RUN apt-get install autoconf zlib1g-dev php-dev php-pear
+
 RUN pecl install grpc
 
 COPY ./docker/php.ini /usr/local/etc/php/conf.d/
